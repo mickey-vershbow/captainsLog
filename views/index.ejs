@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+</head>
+<body>
+    <h1>Logs Index Page</h1>
+
+    <ul>
+        <% for (let i =0; i <logs.length; i++) { %>
+            <li>
+                The title of this log is:
+                <a href = "/logs/<%=logs[i].id%>">
+                    "<%= logs[i].title; %>"
+                </a>
+            <br>
+
+
+
+                <!-- The entry is:
+                "<strong><%= logs[i].entry %></strong>""
+                <br>
+                <% if (logs[i].shipIsBroken === true) { %>
+                    Ship report: the ship is in good condition.
+                <% } else { %>
+                    Ship report: the ship is broken.
+                <% } %>
+            </li> -->
+        <% } %>
+    </ul>
+</body>
+</html>

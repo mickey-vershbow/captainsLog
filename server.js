@@ -31,19 +31,28 @@ app.post("/logs/", (req, res) => {
     //if not checked, req.body.shipIsBroken is undefined
     req.body.shipIsBroken = false;
   }
- console.log(req.body.title);
- console.log(req.body.entry);
- console.log(req.body.shipIsBroken);
-   Log.create(
-     {
-       title: req.body.title,
-       entry: req.body.entry,
-       shipIsBroken: req.body.shipIsBroken,
-     },
-     (error, createdLog) => {
-       res.send(createdLog);
-     }
-   );
+
+  Log.create(req.body, (error, createdLog) => {
+    res.redirect("/logs/index");
+  });
+});
+
+// Logs INDEX page
+app.get("/logs/index", (req, res) => {
+  Log.find({}, (error, allLogs) => {
+    res.render("index", {
+      logs: allLogs
+    });
+  });
+});
+
+// Logs SHOW page
+app.get("/logs/:id", (req, res) => {
+  Log.findById(req.params.id, (error, foundLog) => {
+    res.render("show", {
+      log: foundLog
+    });
+  });
 });
 
 app.listen(PORT, () => {

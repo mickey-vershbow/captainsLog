@@ -9,9 +9,21 @@ const MONGODB_URL =
   process.env.MONGODB_URL || "mongodb://localhost:27017/defaultdb";
 
   ///////////////////////////////////
-// Mongoose Configuration Object to Avoid Warnings
+// Mongoose Configuration
 ///////////////////////////////////
-const config = {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true}
+//* config object to remove warnings
+const mongoconfig = {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false,
+    useCreateIndex: true,
+};
+//* connect to the database
+mongoose.connect(MONGODB_URL, mongoconfig, () => {
+    log.cyan('STATUS', 'the connection with mongod is established');
+    // console.log('the connection with mongod is established'.rainbow.bold);
+});
+
 
 ///////////////////////////////////
 // Handling Connection Events
