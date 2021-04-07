@@ -5,7 +5,9 @@ const app = express();
 const mongoose = require("./db/connection");
 // IMPORT MERCED LOGGER
 const { log } = require("mercedlogger");
-const PORT = process.env.PORT || "2021"
+const PORT = process.env.PORT || "2021";
+
+const Log = require("./models/log");
 
 // Set view engine to EJS
 app.set("view engine", "ejs");
@@ -29,10 +31,20 @@ app.post("/logs/", (req, res) => {
     //if not checked, req.body.shipIsBroken is undefined
     req.body.shipIsBroken = false;
   }
-  res.send(req.body);
+ console.log(req.body.title);
+ console.log(req.body.entry);
+ console.log(req.body.shipIsBroken);
+   Log.create(
+     {
+       title: req.body.title,
+       entry: req.body.entry,
+       shipIsBroken: req.body.shipIsBroken,
+     },
+     (error, createdLog) => {
+       res.send(createdLog);
+     }
+   );
 });
-
-
 
 app.listen(PORT, () => {
   log.white("🚀 Server Launch 🚀", `Listening on Port ${PORT}`);
