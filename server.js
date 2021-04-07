@@ -1,6 +1,11 @@
 // Import dependencies
+require("dotenv").config();
 const express = require("express");
 const app = express();
+const mongoose = require("./db/connection");
+// IMPORT MERCED LOGGER
+const { log } = require("mercedlogger");
+const PORT = process.env.PORT || "2021"
 
 // Set view engine to EJS
 app.set("view engine", "ejs");
@@ -29,8 +34,6 @@ app.post("/logs/", (req, res) => {
 
 
 
-
-
-app.listen(3000, () => {
-  console.log("listening");
+app.listen(PORT, () => {
+  log.white("🚀 Server Launch 🚀", `Listening on Port ${PORT}`);
 });
