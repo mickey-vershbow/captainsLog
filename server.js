@@ -1,15 +1,36 @@
-// Import Dependencies
-
-const express = require('express');
+// Import dependencies
+const express = require("express");
 const app = express();
 
-// Routes
-app.get(/logs/new, (req, res) => {
-    res.send('new');
-})
+// Set view engine to EJS
+app.set("view engine", "ejs");
+
+// Body parser
+app.use(express.urlencoded({ extended: true }));
+
+//////////////////////
+// ROUTES
+/////////////////////
+
+// Create new log GET and POST routes
+app.get("/logs/new", (req, res) => {
+  res.render("new");
+});
+app.post("/logs/", (req, res) => {
+  if (req.body.shipIsBroken === "on") {
+    //if checked, req.body.shipIsBroken is set to 'on'
+    req.body.shipIsBroken = true;
+  } else {
+    //if not checked, req.body.shipIsBroken is undefined
+    req.body.shipIsBroken = false;
+  }
+  res.send(req.body);
+});
 
 
-// Listen on Port 3000
+
+
+
 app.listen(3000, () => {
-    console.log("listening");
+  console.log("listening");
 });
