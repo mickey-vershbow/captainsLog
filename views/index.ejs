@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/style.css">
-    <title>Index</title>
-</head>
+<!-- THE HEAD TAG PARTIAL -->
+  <%- include("partials/head") %>
 <body>
+    <!-- THE HEADER TAG PARTIAL -->
+    <%- include("partials/header") %>
+
+<main>
     <h1>Captain's Log Index as of <%= time %> </h1>
     <ul class="logs-index">
         <% for (let i =0; i < logs.length; i++) { %>
@@ -16,13 +15,17 @@
                 <a href="/logs/<%=logs[i].id; %>">
                      <%=logs[i].title; %>
                 </a>
+            </li>
             <!-- DELETE FORM -->
             <form action="/logs/<%=logs[i].id; %>?_method=DELETE" method="POST">
                 <input type="submit" value="DELETE">
-            </form><br>
-        </li>
+            </form>
+             <!-- EDIT LINK -->
+            <a href="/logs/<%=logs[i].id %>/edit"><button>EDIT LOG</button></a>
+            <br><br><br>
         <% } %>
     </ul> <br><br>
+</main>
 
     <a href="/logs/new"><button>Create A New Log</button></a>
 </body>

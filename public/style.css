@@ -12,14 +12,14 @@
 }
 
 h1 {
-    color: white;
+    /* color: white; */
     text-align: center;
 }
 
 
-body {
+/* body {
     background-color: grey;
-}
+} */
 
 .ship-alert-red {
     color: maroon;
@@ -31,8 +31,4 @@ body {
     color: green;
     font-weight: bolder;
     font-size: larger;
-}
-
-.captain-log-image {
-    
 }

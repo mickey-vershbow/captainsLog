@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Show</title>
-    <link rel="stylesheet" href="/style.css">
-</head>
+<!-- THE HEAD TAG PARTIAL -->
+  <%- include("partials/head") %>
 <body>
+    <!-- THE HEADER TAG PARTIAL -->
+    <%- include("partials/header") %>
+
+<main>
     <h1>Captain's Log Show Page</h1>
         <div class="logs-show">
             <strong>Title: </strong>
@@ -25,12 +24,8 @@
             <br><br>
                 <i> Log updated at <%= log.updatedAt %> </i>
         </div>
-
+</main>
         <br><br>
-
-        <!-- EDIT LINK -->
-            <a href="/logs/edit"><button>EDIT LOG</button></a><br>
-            <br><br>
 
           <!-- INDEXLINK -->
             <a href="/logs/index"><button>Return to Index Page</button></a>
