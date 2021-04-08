@@ -6,14 +6,20 @@ const mongoose = require("./db/connection");
 // IMPORT MERCED LOGGER
 const { log } = require("mercedlogger");
 const PORT = process.env.PORT || "2021";
+const methodOverride = require("method-override");
+const morgan = require("morgan");
+const cors = require("cors");
 
 const Log = require("./models/log");
 
 // Set view engine to EJS
 app.set("view engine", "ejs");
 
-// Body parser
+// Middleware
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static("public")); // serve public folder as static
+app.use(cors()); // prevent cors errors
+app.use(methodOverride("_method")); // swap methods for delete/put requests
 
 //////////////////////
 // ROUTES

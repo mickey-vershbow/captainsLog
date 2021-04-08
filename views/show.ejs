@@ -5,37 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Show</title>
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
     <h1>Logs Show Page</h1>
-
-    <h2>Title: </h2>
-    "<p><%= log.title %></p>"
-     <h2>Entry: </h2>
-    "<p><%= log.title %></p>"
-    <% if (log.shipIsBroken === true) { %>
-        <h2>Ship Condition:</h2>
-        "<p>Ship is broken!!</p>"
-        <% } else { %>
-         <h2>Ship Condition:</h2>
-        "<p>Ship is in working condition.</p>"
-   <% } %>
-
-<!--
-    <ul>
-        <% for (let i =0; i <logs.length; i++) { %>
-            <h4>
-                The title of this log is: "<strong><%= logs[i].title; %></strong>"<br>
-                The entry is:
-                "<strong><%= logs[i].entry %></strong>""
-                <br>
-                <% if (logs[i].shipIsBroken === true) { %>
-                    Ship report: the ship is in good condition.
-                <% } else { %>
-                    Ship report: the ship is broken.
-                <% } %>
-            </h4>
-        <% } %>
-    </ul> -->
+        <div class="entry-show" id="show-info">
+            <strong>Title: </strong>
+            <%= log.title %> <br>
+            <strong>Entry: </strong>
+            <%= log.entry %> <br>
+            <strong>Ship Condition: </strong>
+            <% if (log.shipIsBroken === true) { %>
+            <i> The ship is broken! </i>
+            <% } else { %>
+            <i> The ship is in good condition! </i>
+            <% } %>
+        </div>
 </body>
 </html>

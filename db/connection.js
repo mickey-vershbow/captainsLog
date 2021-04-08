@@ -20,7 +20,7 @@ const mongoconfig = {
 };
 //* connect to the database
 mongoose.connect(MONGODB_URL, mongoconfig, () => {
-    log.cyan('STATUS', 'the connection with mongod is established');
+    log.cyan('STATUS', 'the connection with mongodb is established');
     // console.log('the connection with mongod is established'.rainbow.bold);
 });
 
@@ -30,7 +30,7 @@ mongoose.connect(MONGODB_URL, mongoconfig, () => {
 ///////////////////////////////////
 mongoose.connection
 // Event for When Connection Opens
-.on("open", () => log.green("STATUS", "Connected to Mongo"))
+// .on("open", () => log.green("STATUS", "Connected to Mongo"))
 // Event for When Connection Closes
 .on("close", () => log.red("STATUS", "Disconnected from Mongo"))
 // Event for Connection Errors
