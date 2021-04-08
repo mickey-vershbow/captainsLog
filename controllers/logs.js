@@ -7,6 +7,11 @@ const { model } = require("mongoose");
 //////////////////////
 // ROUTES
 /////////////////////
+router.get("/", (req, res) => {
+  res.render("logs/index");
+})
+
+
 // Logs INDEX page
 router.get("/logs/index", (req, res) => {
   Log.find({}, (error, allLogs) => {

@@ -30,6 +30,8 @@ app.use((req, res, next) => {
 app.use("/", LogController);
 
 
+
+
 app.listen(PORT, () => {
   log.white("🚀 Server Launch 🚀", `Listening on Port ${PORT}`);
 });
