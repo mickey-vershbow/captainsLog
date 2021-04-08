@@ -16,10 +16,14 @@
             <%= log.entry %> <br><br>
             <strong>Ship Condition: </strong>
             <% if (log.shipIsBroken === true) { %>
-            <i> The ship is broken! </i>
+            <p> The ship is broken! </p>
             <% } else { %>
-            <i> The ship is in good condition! </i>
+            <p> The ship is in good condition! </p>
             <% } %>
+                <br><br><br>
+                <i> Log created at <%= log.createdAt %> </i>
+                <br><br>
+                <i> Log updated at <%= log.updatedAt %> </i>
         </div>
 
         <br><br><br>

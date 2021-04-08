@@ -20,6 +20,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public")); // serve public folder as static
 app.use(cors()); // prevent cors errors
 app.use(methodOverride("_method")); // swap methods for delete/put requests
+app.use((req, res, next) => {
+  req.time = new Date().toLocaleTimeString();
+  console.log(req.time);
+  next();
+})
 
 //////////////////////
 // ROUTES
@@ -47,7 +52,8 @@ app.post("/logs/", (req, res) => {
 app.get("/logs/index", (req, res) => {
   Log.find({}, (error, allLogs) => {
     res.render("index", {
-      logs: allLogs
+      logs: allLogs,
+      time: req.time
     });
   });
 });
@@ -60,6 +66,8 @@ app.get("/logs/:id", (req, res) => {
     });
   });
 });
+
+// Logs DELETE route
 
 app.listen(PORT, () => {
   log.white("🚀 Server Launch 🚀", `Listening on Port ${PORT}`);

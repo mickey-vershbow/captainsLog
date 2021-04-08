@@ -8,7 +8,7 @@
     <title>Index</title>
 </head>
 <body>
-    <h1>Logs Index Page</h1>
+    <h1>Logs Index Page as of <%= time %> </h1>
 
     <ul class="logs-index">
         <% for (let i =0; i < logs.length; i++) { %>
@@ -17,8 +17,15 @@
                 <a href="/logs/<%=logs[i].id; %>">
                      <%=logs[i].title; %>
                 </a>
+            <!-- DELETE FORM -->
+            <form>
+                <input type="submit" value="DELETE">
+            </form>
             <br><br>
+        </li>
         <% } %>
     </ul>
+
+    <a href="/logs/new"><button>Create A New Log</button></a>
 </body>
 </html>
