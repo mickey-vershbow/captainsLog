@@ -22,3 +22,9 @@ h1 {
 body {
     background-color: grey;
 }
+
+.ship-alert {
+    color: maroon;
+    font-weight: bolder;
+    font-size: larger;
+}

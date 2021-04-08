@@ -29,6 +29,47 @@ app.use((req, res, next) => {
 //////////////////////
 // ROUTES
 /////////////////////
+// Logs INDEX page
+app.get("/logs/index", (req, res) => {
+  Log.find({}, (error, allLogs) => {
+    res.render("index", {
+      logs: allLogs,
+      time: req.time
+    });
+  });
+});
+
+// Logs DELETE route
+app.delete("/logs/:id", (req, res) => {
+  Log.findByIdAndRemove(req.params.id, (error, data) => {
+    res.redirect("/logs/index");
+  })
+})
+
+// Logs EDIT GET route
+app.get("/logs/:id/edit", (req, res) => {
+  Log.findById(req.params.id, (err, foundLog) => {
+    res.render("edit.ejs",
+    {
+      log: foundLog // pass in found log
+    }
+    );
+  });
+});
+
+// Logs UPDATE PUT route
+app.put('/logs/:id', (req, res) => {
+  if(req.body.shipIsBroken === "on") {
+    req.body.shipIsBroken = true;
+  } else {
+    req.body.shipIsBroken = false;
+  }
+  Log.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedModel) => {
+    res.redirect("/logs/index");
+  });
+});
+
+
 
 // Create new log GET and POST routes
 app.get("/logs/new", (req, res) => {
@@ -47,17 +88,6 @@ app.post("/logs/", (req, res) => {
     res.redirect("/logs/index");
   });
 });
-
-// Logs INDEX page
-app.get("/logs/index", (req, res) => {
-  Log.find({}, (error, allLogs) => {
-    res.render("index", {
-      logs: allLogs,
-      time: req.time
-    });
-  });
-});
-
 // Logs SHOW page
 app.get("/logs/:id", (req, res) => {
   Log.findById(req.params.id, (error, foundLog) => {
@@ -67,12 +97,6 @@ app.get("/logs/:id", (req, res) => {
   });
 });
 
-// Logs DELETE route
-app.delete("/logs/:id", (req, res) => {
-  Log.findByIdAndRemove(req.params.id, (error, data) => {
-    res.redirect("/logs/index");
-  })
-})
 
 app.listen(PORT, () => {
   log.white("🚀 Server Launch 🚀", `Listening on Port ${PORT}`);

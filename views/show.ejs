@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-    <h1>Logs Show Page</h1>
+    <h1>Captain's Log Show Page</h1>
         <div class="logs-show">
             <strong>Title: </strong>
             <%= log.title %> <br><br>
@@ -16,18 +16,23 @@
             <%= log.entry %> <br><br>
             <strong>Ship Condition: </strong>
             <% if (log.shipIsBroken === true) { %>
-            <p> The ship is broken! </p>
+                <p class="ship-alert">The ship is broken!</p>
             <% } else { %>
-            <p> The ship is in good condition! </p>
-            <% } %>
+                <p> The ship is in good condition! </p>
+                <% } %>
                 <br><br><br>
                 <i> Log created at <%= log.createdAt %> </i>
-                <br><br>
+            <br><br>
                 <i> Log updated at <%= log.updatedAt %> </i>
         </div>
 
-        <br><br><br>
+        <br><br>
 
-        <a href="/logs/index"><button>Return to Index Page</button></a>
+        <!-- EDIT LINK -->
+            <a href="/logs/edit"><button>EDIT LOG</button></a><br>
+            <br><br>
+
+          <!-- INDEXLINK -->
+            <a href="/logs/index"><button>Return to Index Page</button></a>
 </body>
 </html>
