@@ -1,11 +1,23 @@
-#show-info {
-    width: 40%;
+.logs-show {
+    max-width: 40%;
     margin: 0 auto;
     padding: 10px;
-    border: 5px solid black;
+    border: 5px dotted palegoldenrod;
+}
+
+.logs-index {
+    max-width: 40%;
+    margin: 0 auto;
+    padding: 10px 26px;
+    border: 5px dotted palegoldenrod;
+    list-style: lower-roman;
+}
+
+h1 {
+    color: palegoldenrod;
 }
 
 
 body {
-    background-color: coral;
+    background-color: grey;
 }
