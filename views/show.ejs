@@ -16,9 +16,9 @@
             <%= log.entry %> <br><br>
             <strong>Ship Condition: </strong>
             <% if (log.shipIsBroken === true) { %>
-                <p class="ship-alert">The ship is broken!</p>
+                <p class="ship-alert-red">The ship is broken!</p>
             <% } else { %>
-                <p> The ship is in good condition! </p>
+                <p class="ship-alert-green"> The ship is in good condition! </p>
                 <% } %>
                 <br><br><br>
                 <i> Log created at <%= log.createdAt %> </i>

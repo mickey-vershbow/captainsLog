@@ -2,20 +2,21 @@
 
     margin: 0 auto;
     padding: 10px;
-    border: 5px dotted palegoldenrod;
+    border: 5px dotted white;
 }
 
 .logs-index {
-
+    max-width: 80%;
     margin: 0 auto;
     padding: 10px;
-    border: 5px dotted palegoldenrod;
+    border: 5px dotted white;
     list-style: none;
     text-align: center;
 }
 
 h1 {
-    color: palegoldenrod;
+    color: white;
+    text-align: center;
 }
 
 
@@ -23,8 +24,14 @@ body {
     background-color: grey;
 }
 
-.ship-alert {
+.ship-alert-red {
     color: maroon;
+    font-weight: bolder;
+    font-size: larger;
+}
+
+.ship-alert-green {
+    color: green;
     font-weight: bolder;
     font-size: larger;
 }

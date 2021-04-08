@@ -10,7 +10,7 @@ const methodOverride = require("method-override");
 const morgan = require("morgan");
 const cors = require("cors");
 
-const Log = require("./models/log");
+const Log = require("./models/Log");
 
 // Set view engine to EJS
 app.set("view engine", "ejs");
