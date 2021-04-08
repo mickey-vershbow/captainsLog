@@ -68,6 +68,11 @@ app.get("/logs/:id", (req, res) => {
 });
 
 // Logs DELETE route
+app.delete("/logs/:id", (req, res) => {
+  Log.findByIdAndRemove(req.params.id, (error, data) => {
+    res.redirect("/logs/index");
+  })
+})
 
 app.listen(PORT, () => {
   log.white("🚀 Server Launch 🚀", `Listening on Port ${PORT}`);
