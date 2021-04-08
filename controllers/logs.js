@@ -8,7 +8,7 @@ const { model } = require("mongoose");
 // ROUTES
 /////////////////////
 router.get("/", (req, res) => {
-  res.render("logs/index");
+  res.render("home");
 })
 
 

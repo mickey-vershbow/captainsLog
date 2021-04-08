@@ -1,15 +1,12 @@
 .logs-show {
-
     margin: 0 auto;
     padding: 10px;
-    border: 5px dotted white;
 }
 
 .logs-index {
     max-width: 80%;
     margin: 0 auto;
     padding: 10px;
-    border: 5px dotted white;
     list-style: none;
     text-align: center;
 }
@@ -34,4 +31,8 @@ body {
     color: green;
     font-weight: bolder;
     font-size: larger;
+}
+
+.captain-log-image {
+    
 }
