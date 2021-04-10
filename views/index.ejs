@@ -1,34 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-    <!-- THE HEAD TAG PARTIAL -->
-    <%- include("partials/head") %>
-    <body>
-        <!-- THE HEADER TAG PARTIAL -->
-        <%- include("partials/header") %>
+  <!-- THE HEAD TAG PARTIAL -->
+  <%- include("partials/head") %>
+  <body>
+    <!-- THE HEADER TAG PARTIAL -->
+    <%- include("partials/header") %>
 
-        <main>
-            <h1>Captain's Log Index as of <%= time %> </h1><br>
-            <a href="/logs/new"><button>Create A New Log</button></a>
-            <ul class="logs-index">
-                <% for (let i =0; i < logs.length; i++) { %>
-            <li>
-                The title of this log is:
-                <a href="/logs/<%=logs[i].id; %>">
-                     <%=logs[i].title; %>
-                </a>
-            </li>
-            <!-- DELETE FORM -->
-            <form action="/logs/<%=logs[i].id; %>?_method=DELETE" method="POST">
-                <input type="submit" value="DELETE">
-            </form>
-             <!-- EDIT LINK -->
-            <a href="/logs/<%=logs[i].id %>/edit"><button>EDIT LOG</button></a>
-            <br><br><br>
+  <section class="hero is-small has-text-centered">
+      <div class="hero-body">
+        <p class="title is-large">Captain's Log</p>
+        <p class="subtitle">Index as of <%= time %> Eastern Standard Time</p>
+      </div>
+    </section>
+        <br>
+
+<ul>
+  <% for (let i =0; i < logs.length; i++) { %>
+    <div class="tile is-ancestor">
+      <div class="tile is-vertical is-8">
+        <div class="tile">
+          <div class="tile is-parent is-vertical">
+              <article class="tile is-child notification is-primary">
+        <li>
+            <h1 class="title"><a href="/logs/<%=logs[i].id; %>"> <%=logs[i].title; %> </a></h1>
+        </li>
+
+        <!-- EDIT LINK -->
+        <a href="/logs/<%=logs[i].id %>/edit" class="edit-button"><button class="button is-ghost">Edit Log</button></a>
+      </p>
+      <br /><br /><br />
+      <!-- DELETE FORM -->
+      <p class="subtitle">
+      <form action="/logs/<%=logs[i].id; %>?_method=DELETE" method="POST" class="delete-button">
+            <input type="submit" value="DELETE LOG" />
+      </form>
+
+        </article>
+        </div>
+        </div>
+        </div>
+        </div>
         <% } %>
-    </ul> <br><br>
-</main>
+        </ul>
+        <br /><br />
+  </main>
 
-     <!-- THE FOOTER TAG PARTIAL -->
+
+    <!-- THE FOOTER TAG PARTIAL -->
     <%- include("partials/footer") %>
-</body>
+  </body>
 </html>

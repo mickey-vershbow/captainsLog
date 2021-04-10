@@ -1,3 +1,8 @@
+* {
+    font-family: 'Crimson Text', serif;
+}
+
+
 .logs-show {
     margin: 0 auto;
     padding: 10px;
@@ -17,9 +22,9 @@ h1 {
 }
 
 
-/* body {
+body {
     background-color: grey;
-} */
+}
 
 .ship-alert-red {
     color: maroon;
@@ -31,4 +36,8 @@ h1 {
     color: green;
     font-weight: bolder;
     font-size: larger;
+}
+
+.edit-button {
+    margin: 0 auto;
 }
