@@ -4,7 +4,7 @@
 
 
 .logs-show {
-    width: 75%;
+    width: 80%;
     padding: 10px;
     margin: 0 auto;
 }
@@ -23,9 +23,7 @@ h1 {
 }
 
 
-body {
-    /* background-color: grey; */
-}
+
 
 .ship-alert-red {
     color: maroon;
@@ -39,9 +37,6 @@ body {
     font-size: larger;
 }
 
-.edit-button {
-    margin: 0 auto;
-}
 
 .home-image {
     margin: 0 auto;
@@ -54,7 +49,19 @@ body {
     align-items: center;
 }
 
-/* #create-button {
+#logger-box {
     width: 80%;
     margin: 0 auto;
-} */
+    text-align: center;
+}
+
+#create-button {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#index-buttons {
+    display: flex;
+    justify-content: space-between;
+}

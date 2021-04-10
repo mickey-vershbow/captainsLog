@@ -30,25 +30,28 @@
             <h1 class="title"><a href="/logs/<%=logs[i].id; %>"> <%=logs[i].title; %> </a></h1>
         </li>
 <br><br>
+
+<div class="field is-grouped" id="index-buttons">
         <!-- EDIT LINK -->
-        <button class="button is-warning is-small" href="/logs/<%=logs[i].id %>/edit">Edit Log</button></>
+
+<a class="button is-medium is-outlined" href="/logs/<%=logs[i].id %>/edit" id="edit-button">Edit Log</a>
+
+
 <br><br>
       <!-- DELETE FORM -->
 
       <form action="/logs/<%=logs[i].id; %>?_method=DELETE" method="POST" class="delete-button">
             <input type="submit" value="Delete Log" class="button is-danger is-outlined is-small"/>
       </form>
-
-
         </article>
         </div>
-        </div>
-        </div>
-        </div>
+      </div>
+    </div>
+   </div>
+</div>
         <% } %>
-        </ul>
-        <br /><br />
-  </main>
+        </ul><br /><br />
+  
 
 
     <!-- THE FOOTER TAG PARTIAL -->

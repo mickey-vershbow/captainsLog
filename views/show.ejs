@@ -30,8 +30,12 @@
                 <% } %>
                 <br><br>
             </div>
+            </div>
+            <br>
+            <!-- INDEX LINK -->
+            <a href="/logs/index"><button class="button is-normal is-fullwidth is-outlined" id="create-button">Return To Index Page</button></a><br>
 
-                <div class="box">
+                <div class="box" id="logger-box">
                 <ul>
                <li> Log created at <%= log.createdAt %> </li>
                <li> Log updated at <%= log.updatedAt %> </li>
@@ -39,8 +43,6 @@
         </div>
 </main>
 <br>
-          <!-- INDEX LINK -->
-        <a href="/logs/index"><button class="button is-normal is-fullwidth is-outlined" id="create-button">Return To Index Page</button></a>
 
 
 </body>
