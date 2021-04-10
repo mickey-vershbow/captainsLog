@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- THE HEAD TAG PARTIAL -->
-  <%- include("partials/head") %>
-<body>
-    <!-- THE HEADER TAG PARTIAL -->
-    <%- include("partials/header") %>
+    <!-- THE HEAD TAG PARTIAL -->
+    <%- include("partials/head") %>
+    <body>
+        <!-- THE HEADER TAG PARTIAL -->
+        <%- include("partials/header") %>
 
-<main>
-    <h1>Captain's Log Index as of <%= time %> </h1>
-    <ul class="logs-index">
-        <% for (let i =0; i < logs.length; i++) { %>
+        <main>
+            <h1>Captain's Log Index as of <%= time %> </h1><br>
+            <a href="/logs/new"><button>Create A New Log</button></a>
+            <ul class="logs-index">
+                <% for (let i =0; i < logs.length; i++) { %>
             <li>
                 The title of this log is:
                 <a href="/logs/<%=logs[i].id; %>">
@@ -27,6 +28,7 @@
     </ul> <br><br>
 </main>
 
-    <a href="/logs/new"><button>Create A New Log</button></a>
+     <!-- THE FOOTER TAG PARTIAL -->
+    <%- include("partials/footer") %>
 </body>
 </html>
