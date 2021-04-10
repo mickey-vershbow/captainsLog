@@ -6,9 +6,18 @@
     <!-- THE HEADER TAG PARTIAL -->
     <%- include("partials/header") %>
 
+
+  <section class="hero is-primary is-small has-text-centered">
+      <div class="hero-body">
+        <p class="title is-large">Captain's Log</p>
+        <p class="subtitle"><%= log.title %></p>
+      </div>
+    </section>
+        <br>
+
 <main>
-    <h1>Captain's Log Show Page</h1>
         <div class="logs-show">
+            <div class="box">
             <strong>Title: </strong>
             <%= log.title %> <br><br>
             <strong>Entry: </strong>
@@ -19,15 +28,20 @@
             <% } else { %>
                 <p class="ship-alert-green"> The ship is in good condition! </p>
                 <% } %>
-                <br><br><br>
-                <i> Log created at <%= log.createdAt %> </i>
-            <br><br>
-                <i> Log updated at <%= log.updatedAt %> </i>
+                <br><br>
+            </div>
+
+                <div class="box">
+                <ul>
+               <li> Log created at <%= log.createdAt %> </li>
+               <li> Log updated at <%= log.updatedAt %> </li>
+        </ul>
         </div>
 </main>
-        <br><br>
+<br>
+          <!-- INDEX LINK -->
+        <a href="/logs/index"><button class="button is-normal is-fullwidth is-outlined" id="create-button">Return To Index Page</button></a>
 
-          <!-- INDEXLINK -->
-            <a href="/logs/index"><button>Return to Index Page</button></a>
+
 </body>
 </html>

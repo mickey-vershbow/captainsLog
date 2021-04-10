@@ -4,8 +4,9 @@
 
 
 .logs-show {
-    margin: 0 auto;
+    width: 75%;
     padding: 10px;
+    margin: 0 auto;
 }
 
 .logs-index {
@@ -53,7 +54,7 @@ body {
     align-items: center;
 }
 
-#create-button {
+/* #create-button {
     width: 80%;
     margin: 0 auto;
-}
+} */
