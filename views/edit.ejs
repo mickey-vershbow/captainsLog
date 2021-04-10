@@ -5,7 +5,13 @@
         <title></title>
     </head>
     <body>
-        <h1>Edit log Page</h1>
+          <section class="hero is-primary is-small has-text-centered">
+      <div class="hero-body">
+        <p class="title is-large">Edit Captain's Log "<%= log.title %> </p>
+        <p class="subtitle">Click The Log To Enter</p>
+
+      </div>
+    </section>
         <form>
     		<!--  NOTE: the form is pre-populated with values for the server-->
     		Title: <input type="text" name="title" value="<%=log.title%>"/><br/>

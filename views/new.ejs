@@ -5,7 +5,14 @@
 <body>
     <!-- THE HEADER TAG PARTIAL -->
     <%- include("partials/header") %>
-        <h1>New Captain's Log Page</h1>
+
+    <section class="hero is-primary is-small has-text-centered">
+      <div class="hero-body">
+        <p class="title is-large">Create New Captain's Log</p>
+      </div>
+    </section>
+        <br>
+
         <form action="/logs" method="POST">
             Title: <input type="text" name="title" /><br/>
             Entry: <input type="text" name="entry" /><br/>

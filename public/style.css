@@ -48,4 +48,12 @@ body {
     display: block;
 }
 
+.captain-index {
+    margin: 30px;
+    align-items: center;
+}
 
+#create-button {
+    width: 80%;
+    margin: 0 auto;
+}
