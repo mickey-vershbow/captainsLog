@@ -1,20 +1,89 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title></title>
-    </head>
-    <body>
-          <section class="hero is-primary is-small has-text-centered">
-      <div class="hero-body">
-        <p class="title is-large">Edit Captain's Log "<%= log.title %> </p>
-        <p class="subtitle">Click The Log To Enter</p>
+<!-- THE HEAD TAG PARTIAL -->
+  <%- include("partials/head") %>
+<body>
+    <!-- THE HEADER TAG PARTIAL -->
+    <%- include("partials/header") %>
 
+       <section class="hero is-primary is-small has-text-centered">
+      <div class="hero-body">
+        <p class="title is-large">Edit Captain's Log</p>
+        <p class="subtitle">"<%= log.title %>"</p>
       </div>
-    </section>
-        <form>
+    </section><br>
+
+
+<!---------- TITLE ------------>
+<div class="box" id="edit-form">
+<div class="field">
+  <label class="label">Title</label>
+  <div class="control">
+    <input class="input" type="text" name="title" value="<%=log.title%>" placeholder="<%=log.title%>"><br/>
+  </div>
+</div>
+
+
+<!---------- ENTRY ------------>
+<div class="field">
+  <label class="label">Entry</label>
+  <div class="control">
+    <textarea class="textarea" type="text" name="entry" value="<%=log.entry%>" placeholder="<%=log.entry%>"></textarea>
+  </div>
+</div>
+
+
+<!---------- SHIP CONDITION------------>
+
+<div class="field">
+  <div class="control">
+    <label class="checkbox">
+        Ship is broken? <br>
+      <input type="checkbox" name="shipIsBroken"
+               <% if(log.shipIsBroken === true){ %>
+                   checked
+               <% } %>
+           />
+    </label>
+  </div>
+</div><br/>
+
+
+<!-- <div class="field">
+  <div class="control">
+    <label class="radio">
+      <input type="radio" name="question">
+      Yes
+    </label>
+    <label class="radio">
+      <input type="radio" name="question">
+      No
+    </label>
+  </div>
+</div> -->
+
+
+<!---------- SUBMIT ------------>
+<div class="field is-grouped">
+  <div class="control">
+    <button class="button is-link">Submit</button>
+  </div>
+  <div class="control">
+    <button class="button is-link is-light">Cancel</button>
+  </div>
+</div>
+</div>
+</body>
+</html>
+
+
+
+
+
+    <!-- ORIGINAL FORM -->
+        <!-- <form> -->
     		<!--  NOTE: the form is pre-populated with values for the server-->
-    		Title: <input type="text" name="title" value="<%=log.title%>"/><br/>
+    		<!-- Title: <input type="text" name="title" value="<%=log.title%>"/><br/>
     		Entry: <input type="text" name="entry" value="<%=log.entry%>"/><br/>
     		Ship is broken?:
             <input type="checkbox" name="shipIsBroken"
@@ -24,6 +93,4 @@
             />
             <br/>
             <input type="submit" name="" value="Submit Changes"/>
-        </form>
-    </body>
-</html>
+        </form> -->
