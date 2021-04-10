@@ -6,8 +6,21 @@
     <!-- THE HEADER TAG PARTIAL -->
     <%- include("partials/header") %>
 <body>
-    <h1>Captain's Log</h1>
-    <h3>Click The Log To Enter</h3>
-    <a href="/logs/index"><img src="https://i.imgflip.com/2174sq.jpg" alt="captain log image" class="captain-log-image"></a>
+  <section class="hero is-primary is-small has-text-centered">
+      <div class="hero-body">
+        <p class="title is-large">Captain's Log</p>
+        <p class="subtitle">Click The Log To Enter</p>
+
+      </div>
+    </section>
+   
+
+  <a href="/logs/index"><img src="https://i.imgflip.com/2174sq.jpg" class="home-image"></a>
+
+
+    <!-- <a href="/logs/index"><img src="https://i.imgflip.com/2174sq.jpg" alt="captain log image" class="captain-log-image"></a> -->
+
+    <!-- THE FOOTER PARTIAL -->
+    <%- include("partials/footer") %>
 </body>
 </html>

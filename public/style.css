@@ -23,7 +23,7 @@ h1 {
 
 
 body {
-    background-color: grey;
+    /* background-color: grey; */
 }
 
 .ship-alert-red {
@@ -41,3 +41,11 @@ body {
 .edit-button {
     margin: 0 auto;
 }
+
+.home-image {
+    margin: 0 auto;
+    padding: 60px;
+    display: block;
+}
+
+

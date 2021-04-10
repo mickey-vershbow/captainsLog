@@ -6,7 +6,7 @@
     <!-- THE HEADER TAG PARTIAL -->
     <%- include("partials/header") %>
 
-  <section class="hero is-small has-text-centered">
+  <section class="hero is-primary is-small has-text-centered">
       <div class="hero-body">
         <p class="title is-large">Captain's Log</p>
         <p class="subtitle">Index as of <%= time %> Eastern Standard Time</p>
@@ -14,13 +14,13 @@
     </section>
         <br>
 
-<ul>
+<ul class="captain-index">
   <% for (let i =0; i < logs.length; i++) { %>
     <div class="tile is-ancestor">
-      <div class="tile is-vertical is-8">
+      <div class="tile is-vertical is-5">
         <div class="tile">
           <div class="tile is-parent is-vertical">
-              <article class="tile is-child notification is-primary">
+              <article class="tile is-child notification .is-$grey-dark">
         <li>
             <h1 class="title"><a href="/logs/<%=logs[i].id; %>"> <%=logs[i].title; %> </a></h1>
         </li>
